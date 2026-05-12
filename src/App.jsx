@@ -16,11 +16,9 @@ import Profile from "./pages/Profile";
 
 export default function App() {
 
-  // ✅ TOKEN
   const token =
     localStorage.getItem("token");
 
-  // ✅ LOGIN
   function handleLogin(token, usuario) {
 
     if (!token || !usuario) {
@@ -41,7 +39,6 @@ export default function App() {
       "/dashboard";
   }
 
-  // ✅ LOGOUT
   function handleLogout() {
 
     localStorage.removeItem("token");
