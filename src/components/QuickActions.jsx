@@ -20,19 +20,16 @@ export default function QuickActions() {
 
   const navigate = useNavigate();
 
-  // 📅 NOVO EVENTO
   function novoEvento() {
 
     navigate("/calendar");
 
   }
 
-  // 📊 GERAR RELATÓRIO PDF
   function gerarRelatorio() {
 
     const doc = new jsPDF();
 
-    // TÍTULO
     doc.setFontSize(22);
 
     doc.text(
@@ -41,7 +38,6 @@ export default function QuickActions() {
       20
     );
 
-    // DATA
     doc.setFontSize(11);
 
     doc.text(
@@ -50,7 +46,6 @@ export default function QuickActions() {
       30
     );
 
-    // KPIs
     doc.setFontSize(16);
 
     doc.text(
@@ -72,7 +67,6 @@ export default function QuickActions() {
       ],
     });
 
-    // INSIGHTS
     doc.setFontSize(16);
 
     doc.text(
@@ -101,7 +95,6 @@ export default function QuickActions() {
       152
     );
 
-    // RODAPÉ
     doc.setFontSize(10);
 
     doc.text(
@@ -110,14 +103,12 @@ export default function QuickActions() {
       285
     );
 
-    // DOWNLOAD
     doc.save(
       "relatorio-analytics.pdf"
     );
 
   }
 
-  // 📥 EXPORTAR DADOS JSON
   function exportarDados() {
 
     const dados = {
@@ -166,7 +157,7 @@ export default function QuickActions() {
 
         <div className="flex flex-col gap-3 mb-3 items-end">
 
-          {/* 📅 EVENTO */}
+          {/* EVENTO */}
           <button
             onClick={novoEvento}
 
@@ -204,7 +195,7 @@ export default function QuickActions() {
 
           </button>
 
-          {/* 📊 RELATÓRIO */}
+          {/* RELATÓRIO */}
           <button
             onClick={gerarRelatorio}
 
@@ -242,7 +233,7 @@ export default function QuickActions() {
 
           </button>
 
-          {/* 📥 EXPORTAR */}
+          {/* EXPORTAR */}
           <button
             onClick={exportarDados}
 
