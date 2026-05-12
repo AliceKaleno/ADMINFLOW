@@ -28,13 +28,10 @@ export default function CreateUserModal({
         senha
       });
 
-      // 🔄 Atualiza lista
       atualizarUsuarios();
 
-      // ❌ Fecha modal
       fechar();
 
-      // 🧹 Limpa campos
       setNome("");
       setEmail("");
       setSenha("");
