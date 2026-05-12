@@ -14,14 +14,12 @@ import {
 
 export default function Sidebar() {
 
-  // ✅ PROTEÇÃO CONTRA JSON INVALIDO
   const usuario = JSON.parse(
     localStorage.getItem("usuario") || "{}"
   );
 
   const location = useLocation();
 
-  // ✅ TEMA INICIAL
   const [darkMode, setDarkMode] = useState(() => {
 
     const temaSalvo =
@@ -31,7 +29,6 @@ export default function Sidebar() {
 
   });
 
-  // ✅ CONTROLA O DARK MODE
   useEffect(() => {
 
     if (darkMode) {
@@ -175,7 +172,7 @@ export default function Sidebar() {
 
       </nav>
 
-      {/* 🌙 DARK MODE */}
+      {/* DARK MODE */}
       <button
         onClick={() =>
           setDarkMode(!darkMode)
