@@ -19,14 +19,12 @@ export default function AIAssistant() {
 
     const comando = texto.toLowerCase();
 
-    // 💰 VENDAS
     if (
       comando.includes("vendas")
     ) {
       return "💰 Vendas atuais: R$ 32.400";
     }
 
-    // 👥 USUÁRIOS
     if (
       comando.includes("usuarios") ||
       comando.includes("users")
@@ -34,14 +32,12 @@ export default function AIAssistant() {
       return "👥 Usuários cadastrados: 1245";
     }
 
-    // 📈 CRESCIMENTO
     if (
       comando.includes("crescimento")
     ) {
       return "📈 Crescimento atual: 12%";
     }
 
-    // ❓ AJUDA
     if (
       comando.includes("ajuda")
     ) {
@@ -55,7 +51,6 @@ export default function AIAssistant() {
       `;
     }
 
-    // 🤖 DEFAULT
     return "🤖 Não entendi esse comando.";
   }
 
@@ -63,13 +58,11 @@ export default function AIAssistant() {
 
     if (!mensagem.trim()) return;
 
-    // mensagem usuário
     const novaMensagem = {
       autor: "user",
       texto: mensagem
     };
 
-    // resposta IA
     const respostaIA = {
       autor: "ia",
       texto: responderIA(mensagem)
@@ -133,7 +126,6 @@ export default function AIAssistant() {
               value={mensagem}
               onChange={(e) => setMensagem(e.target.value)}
 
-              // 🔥 ENTER FUNCIONA
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   enviarMensagem();
