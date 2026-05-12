@@ -15,7 +15,6 @@ const localizer = momentLocalizer(moment);
 
 export default function CalendarPage() {
 
-  // 📅 EVENTOS
   const [eventos, setEventos] = useState([
     {
       title: "Reunião equipe",
@@ -24,13 +23,10 @@ export default function CalendarPage() {
     },
   ]);
 
-  // 📅 DATA ATUAL
   const [date, setDate] = useState(new Date());
 
-  // 👀 VISUALIZAÇÃO
   const [view, setView] = useState("month");
 
-  // ➕ ADICIONAR EVENTO
   function adicionarEvento({ start, end }) {
 
   const titulo = prompt(
@@ -82,13 +78,11 @@ export default function CalendarPage() {
             localizer={localizer}
             events={eventos}
 
-            // ✅ FUNCIONA BACK/NEXT/TODAY
             date={date}
             onNavigate={(newDate) =>
               setDate(newDate)
             }
 
-            // ✅ FUNCIONA MONTH/WEEK/DAY/AGENDA
             view={view}
             onView={(newView) =>
               setView(newView)
