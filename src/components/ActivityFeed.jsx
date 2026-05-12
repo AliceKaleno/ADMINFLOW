@@ -6,7 +6,6 @@ export default function ActivityFeed() {
 
   const [logs, setLogs] = useState([]);
 
-  // ✅ FUNÇÃO PRIMEIRO
   async function carregar() {
 
     try {
@@ -23,7 +22,6 @@ export default function ActivityFeed() {
 
   }
 
-  // ✅ DEPOIS O useEffect
 useEffect(() => {
 
   async function iniciar() {
