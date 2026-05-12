@@ -12,7 +12,6 @@ import {
 
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-import { io } from "socket.io-client";
 
 export default function Charts() {
 
