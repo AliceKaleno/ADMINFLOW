@@ -20,7 +20,6 @@ export default function Login({ onLogin }) {
 
   const navigate = useNavigate();
 
-  // 🔐 LOGIN
   const handleLogin = async () => {
 
     setErro("");
@@ -46,13 +45,11 @@ export default function Login({ onLogin }) {
 
       if (res.data.success) {
 
-        // ✅ SALVA TOKEN
         localStorage.setItem(
           "token",
           res.data.token
         );
 
-        // ✅ SALVA USUÁRIO
         localStorage.setItem(
           "usuario",
           JSON.stringify(
@@ -60,7 +57,6 @@ export default function Login({ onLogin }) {
           )
         );
 
-        // ✅ CHAMA APP
         if (onLogin) {
 
           onLogin(
@@ -70,7 +66,6 @@ export default function Login({ onLogin }) {
 
         }
 
-        // 🚀 REDIRECIONA
         navigate("/dashboard");
       }
 
