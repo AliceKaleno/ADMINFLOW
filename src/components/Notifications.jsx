@@ -12,14 +12,11 @@ export default function Notifications() {
     const socket = io(window.location.origin);
 
     socket.on("notificacao", (data) => {
-      // 🔔 salva no histórico
       setNotificacoes((prev) => [data, ...prev]);
 
-      // ⚡ mostra toast temporário
       const id = Date.now();
       setToasts((prev) => [...prev, { ...data, id }]);
 
-      // ⏱️ remove após 5s
       setTimeout(() => {
         setToasts((prev) => prev.filter((t) => t.id !== id));
       }, 5000);
@@ -30,7 +27,7 @@ export default function Notifications() {
 
   return (
     <>
-      {/* 🔔 SINO */}
+      {/* SINO */}
       <div className="relative">
         <button onClick={() => setAberto(!aberto)} className="relative">
           <Bell size={24} />
@@ -42,7 +39,7 @@ export default function Notifications() {
           )}
         </button>
 
-        {/* 📋 DROPDOWN */}
+        {/* DROPDOWN */}
         {aberto && (
           <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-xl p-3 z-50">
             <h2 className="font-bold mb-2">Notificações</h2>
@@ -65,7 +62,7 @@ export default function Notifications() {
         )}
       </div>
 
-      {/* ⚡ TOASTS (aparecem e somem) */}
+      {/* TOASTS */}
       <div className="fixed top-5 right-5 z-50 space-y-2">
         {toasts.map((t) => (
           <div
